@@ -15,13 +15,13 @@ cosa1 > cosa2, cosa1 + cosa2, cosa1 * cosa2, $, -->
       href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap"
       rel="stylesheet"
     />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   </head>
   <body>
     <header>
-      <h1>Cafeteria Bluffe</h1>
-
+      <!-- <h1><a href="cafeteria.html">Cafeteria Bluffe</a></h1> -->
       <nav>
-        <a href="cafeteria.html">Inicio</a>
+        <a href="cafeteria.html">Cafeteria Bluffe</a>
         <ul>
           <li><a href="menu.html">Menu</a></li>
           <li><a href="productos.html">Productos</a></li>
@@ -33,7 +33,7 @@ cosa1 > cosa2, cosa1 + cosa2, cosa1 * cosa2, $, -->
     </header>
 
     <main>
-      <form action="/search/"></form>
+      <!-- <form action="/search/"></form>
       <section class="banner_inicio">
         <img
           src="../assets/images/banner_cafes_calientes.png"
@@ -41,75 +41,36 @@ cosa1 > cosa2, cosa1 + cosa2, cosa1 * cosa2, $, -->
           width="500px"
         />
         <figcaption>Nuestros nuevos cafés...</figcaption>
-      </section>
+      </section> -->
 
-      <form action="/tacos">
-        <input type="text" placeholder="Buscador..." />
-      </form>
+      <div class="banner-video">
+        <video autoplay muted loop playsinline>
+          <source src="../assets/videos/video-bluffe.mp4" type="video/mp4" />
+          Tu navegador no soporta videos.
+        </video>
+      </div>
 
-      <section class="seccion_inicio">
-        <h2>Lo que nos diferencia</h2>
-        <h3>La Excelencia en cada Grano, el Compromiso en cada Taza.</h3>
-        <p>
-          En nuestra cafetería, entendemos que el café no es solo una bebida,
-          sino un ritual que merece ser honrado. Lo que nos diferencia es una
-          búsqueda incansable por la perfección, desde el origen hasta el último
-          sorbo.
-        </p>
-        <h3>☕ Calidad que se Saborea</h3>
-        <p>
-          Seleccionamos exclusivamente los mejores granos de café, provenientes
-          de fincas que respetan los tiempos de la naturaleza. Cada cosecha es
-          elegida por su perfil de sabor único, garantizando una experiencia
-          sensorial superior en cada taza que servimos.
-        </p>
-        <h3>🛠️ Maestría en la Preparación</h3>
-        <p>
-          La materia prima es solo el comienzo. Aplicamos las mejores técnicas
-          de extracción y preparación para asegurar que cada bebida mantenga el
-          equilibrio perfecto de aroma, cuerpo y sabor. Nuestros procesos están
-          diseñados para satisfacer los paladares más exigentes, cuidando cada
-          detalle para que tu visita sea siempre excepcional.
-        </p>
-        <h3>🌱 Compromiso Responsable</h3>
-        <p>
-          Creemos que la excelencia no es nada sin integridad. Por eso, operamos
-          bajo los más estrictos estándares de higiene y seguridad alimentaria,
-          garantizando un entorno impecable para nuestros clientes. Además,
-          mantenemos un profundo respeto por el medio ambiente, implementando
-          medidas de sostenibilidad que reducen nuestro impacto y promueven un
-          futuro más verde.
-        </p>
-      </section>
+      <div id="grid-categorias">
+        <a href="menu.html#cafe" class="item-categoria">
+          <img src="../assets/images/categoria-paquete-cafe.png" alt="Café" />
+          <p>Café</p>
+        </a>
 
-      <section class="seccion_inicio">
-        <h2>Lo que dicen nuestro clientes</h2>
+        <a href="menu.html#alfajores" class="item-categoria">
+          <img src="../assets/images/categoria-alfajor.png" alt="Alfajores" />
+          <p>Alfajores</p>
+        </a>
 
-        <article>
-          <h4>"El mejor espresso de Parque Patricios"</h4>
-          <p>
-            La atención es increíble y el aroma del café te atrapa apenas
-            entrás. ¡Súper recomendado!
-          </p>
-          <span>Juan Pérez</span>
-        </article>
+        <a href="menu.html#bombones" class="item-categoria">
+          <img src="../assets/images/categoria-bombon.png" alt="Bombones" />
+          <p>Bombones</p>
+          
+        <a href="menu.html#bombones" class="item-categoria">
+          <img src="../assets/images/categoria-chocolate.png" alt="Bombones" />
+          <p>Chocolate</p>
 
-        <article>
-          <h4>"Excelente para estudiar"</h4>
-          <p>
-            Wi-Fi rápido y un ambiente muy tranquilo. El budín de limón es un
-            10.
-          </p>
-          <span>Sofía G.</span>
-        </article>
-      </section>
-
-      <!-- <a href="cvIngrid.html">Go home!</a>
-      <p>Foto online:</p>
-      <img
-        src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/Poligraf_Poligrafovich.JPG/500px-Poligraf_Poligrafovich.JPG"
-        alt="Perrito"
-      /> -->
+        </a>
+      </div>
 
       <!-- PUEDO COMENTAR Y DESCOMENTAR CON [ctrl + k ctrl + c] o [ctrl + shift + 7] -->
       <!-- Esto es un comentario de línea -->

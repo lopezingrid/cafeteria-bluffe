@@ -1,11 +1,14 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* ¡Esto es crucial para que los padding no sumen altura extra! */
+}
+
 body {
-    /*font-family: Arial, Helvetica, sans-serif; */
-    /*display: grid;
-    place-items: center;  /* Centra en ambos ejes de un solo golpe */
-    margin: 0 auto; 
-    min-height: 100vh; 
+    margin: 0; 
+    min-height: 100vh;
     display: flex;
-    flex-direction: column;
+    flex-direction: column; /* Crea la columna: Header - Main - Footer */    
     font-family: "Raleway", sans-serif;
     font-optical-sizing: auto;
     font-weight: 500;
@@ -13,11 +16,18 @@ body {
     background-color: #f8edeb;
 }
 
+main {
+    display: block; /* Esto le dice al main: "tomá todo el espacio que sobra" */
+    flex: 1;
+}
+
 footer {
     margin-top: auto;
     text-align: center;
     padding: 20px 10px;
     background-color: #f2e9e4;
+    border-top: 1px solid black;
+    flex-shrink: 0;
 }
 
 ::selection {
@@ -29,6 +39,12 @@ h1 {
     font-weight: normal;
     line-height: 1;
     letter-spacing: 1px;
+    background-color: ;
+}
+
+h1 a {
+    text-decoration: none;
+    color: black;
 }
 
 /*
@@ -60,6 +76,15 @@ nav a:active {
 }
 */
 
+header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background-color: #f8edeb;
+    height: 80px;
+    border-bottom: 1px solid black;
+}
+
 nav {
     width: 100%;
     display: flex;
@@ -67,7 +92,18 @@ nav {
     justify-content: space-between;
     align-items: center; 
     font-size: 1.5rem;
-    padding: 30px;
+    padding: 20px 40px;
+    background-color: #f8edeb;
+}
+
+nav a {
+    text-decoration: none;
+    color: #333533;
+}
+
+nav a:hover {
+    color: #846267;
+    /* text-decoration: underline; */
 }
 
 ul, li {
@@ -147,8 +183,8 @@ h2::before {
     width: 800px; 
 }
 
+/*
 #contenedorProductos {
-    /* background-color: #e5d4bd; */
     margin: auto;
     width: 80%;
     min-height: 800px;
@@ -163,25 +199,120 @@ h2::before {
     width: 300px;
     height: 300px;
     object-fit: cover;
-}
- 
-@media (max-width: 1000px) {
-    h1 {
-        color: red;
-    }
+    border: 1px solid transparent;
 }
 
-@media (max-width: 600px) {
-    h1 {
-        color: blue;;
-    }
+#contenedorProductos .fotoProducto:hover {
+    border: 1px solid black;
 }
 
+*/
 
+#contenedorMenus {
+    margin: auto;
+    width: 80%;
+    min-height: 800px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 20px;
+    gap: 40px;
+}
 
+#contenedorMenus .tarjetaMenu {
+    width: 300px;
+    height: 300px;
+    position: relative; /* Clave: es la referencia para apilar las imágenes */
+    overflow: hidden; /* Mantenemos todo limpio */
+    cursor: pointer;
+}
 
+#contenedorMenus .fotoMenu {
+    width: 100%; /* Ocupa todo el contenedor .tarjetaMenu (300px) */
+    height: 100%;
+    object-fit: cover;
+    position: absolute; /* Clave: apila las imágenes una sobre otra */
+    top: 0;
+    left: 0;
+    transition: opacity 0.4s ease; /* Efecto suave de fade in/out */
+}
 
+/* 3. ESTADOS INICIALES */
+.fotoPrincipal {
+    opacity: 1; /* La foto de frente está visible */
+}
 
+.fotoHover {
+    opacity: 0; /* La foto de detalle está oculta */
+}
+
+/* 4. LA MÁGIA DEL HOVER (sobre el contenedor .tarjetaProducto) */
+/* Cuando pasas el mouse por el contenedor, ocultamos la principal */
+.fotoPrincipal:hover {
+    opacity: 0;
+}
+
+/* Y mostramos la de detalle */
+.fotoHover:hover {
+    opacity: 1;
+}
+
+.banner-video {
+    /* width: 100%;
+    height: 85vh;
+    overflow: hidden; */
+    width: 100%; 
+    height: calc(100vh - 80px);
+    flex-shrink: 0;
+    overflow: hidden;
+}
+
+.banner-video video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+}
+
+@media (max-width: 768px) {
+    
+}
+
+#grid-categorias {
+    display: grid;
+    /* Achicamos un poco el tamaño mínimo para que entren más productos por fila (estilo Havanna) */
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); 
+    
+    /* 1. Reducimos el espacio entre ellas */
+    gap: 15px; 
+    
+    /* 2. Le damos el ancho que querés */
+    width: 70%; 
+    
+    /* 3. ¡El truco para centrar! (Margen arriba/abajo: 50px, Izquierda/Derecha: auto) */
+    margin: 50px auto;
+}
+
+#grid-categorias p {
+    font-weight: bold;
+}
+
+.item-categoria {
+    text-decoration: none;
+    color: #333;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.item-categoria img {
+    width: 100%;             /* Ocupa todo el ancho de su columna */
+    aspect-ratio: 1 / 1;     /* ¡La magia! Le dice que la altura debe ser exactamente igual al ancho */
+    object-fit: cover;       /* Evita que el café o el alfajor se vean deformados */
+    border-radius: 10px;     /* Bordes redondeados para un toque suave */
+}
+
+.item-categoria:hover {
+    transform: scale(1.05); /* Efecto zoom al pasar el mouse */
+}
 
 
 
