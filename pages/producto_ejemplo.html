@@ -21,7 +21,6 @@
       <nav>
         <a href="cafeteria.html">Cafeteria Bluffe</a>
         <ul>
-          <li><a href="menu.html">Menu</a></li>
           <li><a href="productos.html">Productos</a></li>
           <li><a href="sucursales.html">Sucursales</a></li>
           <li><a href="contacto.html">Contacto</a></li>
@@ -31,68 +30,121 @@
     </header>
 
     <main>
-      <img
-      src="../assets/images/producto_generico_cafe.png"
-      alt="Imagen ilustrativa del producto"
-      width="500px"
-      id="img"
-      />
-      <h1 id="nombre">Producto ejemplo</h2>
-      <p id="precio">$10.000,00</p>
+      <section class="pagina-producto">
+        <div class="contenedor-producto-principal">
+          <div class="columna-imagen">
+            <img src="../assets/images/producto_generico_cafe.png" alt="Imagen ilustrativa del producto" width="500px"  id="img"/>
+          </div>
+          <div class="columna-info">
+            <h1 id="nombre">Producto ejemplo</h2>
+            <p id="precio">$10.000,00</p>
 
-      <label for="cantidad">Cantidad:</label>
-        <select name="cantidad" id="cantidad">
-          <option value="1">1 unidad</option>
-          <option value="2">2 unidades</option>
-          <option value="3">3 unidades</option>
-          <option value="4">4 unidades</option>
-          <option value="5">5 unidades</option>
-        </select>
-        <br>
-        <button>Agregar al carrito</button>
+            <p class="descripcion-corta">
+              Clásicas y esponjosas, horneadas en el día en Cafetería Bluffe. El laminado perfecto para acompañar tu café de especialidad de todas las mañanas.
+            </p>
 
-      <table>
-        <caption>
-          Ficha técnica del producto
-        </caption>
+            <div class="caja-compra">
+              <div class="grupo-cantidad">
+                  <label for="cantidad">Cantidad:</label>
+                  <select name="cantidad" id="cantidad">
+                      <option value="1">1 unidad</option>
+                      <option value="2">2 unidades</option>
+                      <option value="3">3 unidades</option>
+                      <option value="4">4 unidades</option>
+                      <option value="5">5 unidades</option>
+                  </select>
+              </div>
+              <button class="boton-agregar-producto">Agregar al carrito</button>
+            </div>
+          </div>
+        </div>
 
-        <colgroup>
-          <col style="background-color: #d9d9d9" />
-          <col span="1" />
-        </colgroup>
+        <div class="contenedor-producto-detalles">
+          <table class="tabla-tecnica">
+            <caption>Ficha técnica del producto</caption>
 
-        <thead>
-          <tr>
-            <td scope="col">Característica</td>
-            <td scope="col">Detalle</td>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <th scope="row">Variedad</th>
-            <td>100% arábica</td>
-          </tr>
-          <tr>
-            <th scope="row">Origen</th>
-            <td>Minas Gerais, Brasil</td>
-          </tr>
-          <tr>
-            <th scope="row">Tueste</th>
-            <td>Medio</td>
-          </tr>
-          <tr>
-            <th scope="row">Notas</th>
-            <td>Caramelo y Frutos Rojos</td>
-          </tr>
-        </tbody>
-      </table>
+            <thead>
+              <tr>
+                <th scope="col">Características</th>
+                <th scope="col">Detalle</th>
+              </tr>
+            </thead>
+
+            <tbody>
+              <tr>
+                <th scope="row">Variedad</th>
+                <td>100% arábica</td>
+            </tr>
+            <tr>
+                <th scope="row">Origen</th>
+                <td>Minas Gerais, Brasil</td>
+            </tr>
+            <tr>
+                <th scope="row">Tueste</th>
+                <td>Medio</td>
+            </tr>
+            <tr>
+                <th scope="row">Notas</th>
+                <td>Caramelo y Frutos Rojos</td>
+            </tr>
+            </tbody>
+
+          </table>
+        </div>
+      
+        <div class="contenedor-descripcion-larga">
+          <h2>Descripción</h2>
+          <p class="intro-descripcion">
+              El diseño no puede elegirse, se envía indistintamente. Cada caja contiene 8 alfajores en total: 4u. de Alfajores Bristol y 4u. de Alfajores Playa Grande:
+          </p>
+  
+          <div class="item-descripcion">
+              <h3>⛱️ Alfajores Bristol x 4 unidades.</h3>
+              <p>Alfajores cubiertos con chocolate Gold de suaves notas acarameladas, rellenos de dulce de leche y ganache de chocolate blanco.</p>
+          </div>
+  
+          <div class="item-descripcion">
+              <h3>⛱️ Alfajores Playa Grande x 4 unidades.</h3>
+              <p>Alfajores cubiertos con chocolate 70% cacao, rellenos de dulce de leche y crème brûlée.</p>
+          </div>
+      </div>
+
+      </section>
     </main>
 
     <footer>
-      <p>🕒 Lunes a Sábados de 08:00 a 20:00 hs.</p>
-      <p>📍 Caseros y La Rioja, Parque Patricios, CABA.</p>
-      <p>Síguenos en Instagram: @cafeteriabluffe</p>
-      <p>&copy; 2026 Cafetería Bluffe - Todos los derechos reservados.</p>
+      <div class="footer-columnas">
+        <div class="columna">
+          <h3>Categorías</h3>
+          <ul>
+            <li><a href="">Cafés</a></li>
+            <li><a href="">Alfajores</a></li>
+            <li><a href="">Bombones</a></li>
+            <li><a href="">Chocolate</a></li>
+          </ul>
+        </div>
+
+        <div class="columna">
+          <ul>
+            <li><a href="">Nuestra Historia</a></li>
+            <li><a href="">Sucursales</a></li>
+            <li><a href="">Trabajá con nosotros</a></li>
+          </ul>
+        </div>
+
+        <div class="columna">
+          <h3>Contacto</h3>
+          <ul>
+              <li>📍 Caseros y La Rioja, CABA</li>
+              <li>🕒 Lun a Sáb - 08:00 a 20:00</li>
+              <li>✉️ hola@bluffe.com</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-creditos">
+        <p>&copy; 2026 Cafetería Bluffe - Todos los derechos reservados.</p>
+      </div>
     </footer>
   </body>
 </html>
