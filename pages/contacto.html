@@ -21,7 +21,6 @@
       <nav>
         <a href="cafeteria.html">Cafeteria Bluffe</a>
         <ul>
-          <li><a href="menu.html">Menu</a></li>
           <li><a href="productos.html">Productos</a></li>
           <li><a href="sucursales.html">Sucursales</a></li>
           <li><a href="contacto.html">Contacto</a></li>
@@ -30,13 +29,88 @@
       </nav>
     </header>
 
-    <main></main>
+    <main>
+      <section class="contenedor-contacto">
+        <div class="info-contacto">
+          <h2>Sigamos en contacto</h2>
+          <p>
+            ¿Tenés consultas sobre nuestros granos de café o querés encargar un
+            buen lote de medialunas para un evento? ¡Escribinos!
+          </p>
+          <ul class="datos-lista">
+            <li>📍 Sede Parque Patricios - Av. Caseros y La Rioja</li>
+            <li>✉️ hola@bluffe.com.ar</li>
+            <li>📱 +54 11 1234-5678</li>
+          </ul>
+        </div>
+
+        <div class="formulario-contacto">
+          <form action="" class="form-bluffe">
+            <div class="grupo-input">
+              <label for="nombre">Nombre completo </label>
+              <input type="text" id="nombre" placeholder="Tu nombre" required />
+            </div>
+
+            <div class="grupo-input">
+              <label for="correo">Correo electrónico</label>
+              <input
+                type="email"
+                id="correo"
+                placeholder="ejemplo@correo.com"
+                required
+              />
+            </div>
+
+            <div class="grupo-input">
+              <label for="mensaje">Mensaje</label>
+              <textarea
+                id="mensaje"
+                placeholder="¿En qué te podemos ayudar?"
+                rows="4"
+              ></textarea>
+            </div>
+
+            <button type="submit" class="boton-enviar-formulario">
+              Enviar Mensaje
+            </button>
+          </form>
+        </div>
+      </section>
+    </main>
 
     <footer>
-      <p>🕒 Lunes a Sábados de 08:00 a 20:00 hs.</p>
-      <p>📍 Caseros y La Rioja, Parque Patricios, CABA.</p>
-      <p>Síguenos en Instagram: @cafeteriabluffe</p>
-      <p>&copy; 2026 Cafetería Bluffe - Todos los derechos reservados.</p>
+      <div class="footer-columnas">
+        <div class="columna">
+          <h3>Categorías</h3>
+          <ul>
+            <li><a href="">Cafés</a></li>
+            <li><a href="">Alfajores</a></li>
+            <li><a href="">Bombones</a></li>
+            <li><a href="">Chocolate</a></li>
+          </ul>
+        </div>
+
+        <div class="columna">
+          <ul>
+            <li><a href="">Nuestra Historia</a></li>
+            <li><a href="">Sucursales</a></li>
+            <li><a href="">Trabajá con nosotros</a></li>
+          </ul>
+        </div>
+
+        <div class="columna">
+          <h3>Contacto</h3>
+          <ul>
+            <li>📍 Caseros y La Rioja, CABA</li>
+            <li>🕒 Lun a Sáb - 08:00 a 20:00</li>
+            <li>✉️ hola@bluffe.com</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-creditos">
+        <p>&copy; 2026 Cafetería Bluffe - Todos los derechos reservados.</p>
+      </div>
     </footer>
   </body>
 </html>
