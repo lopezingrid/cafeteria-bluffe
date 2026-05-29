@@ -21,7 +21,6 @@
       <nav>
         <a href="cafeteria.html">Cafeteria Bluffe</a>
         <ul>
-          <li><a href="menu.html">Menu</a></li>
           <li><a href="productos.html">Productos</a></li>
           <li><a href="sucursales.html">Sucursales</a></li>
           <li><a href="contacto.html">Contacto</a></li>
@@ -31,55 +30,73 @@
     </header>
 
     <main>
-      <form action="/pizzas" class="inicio_sesion">
-        <p>
-          <label for="email_usuario">Ingrese su email </label>
-          <input
-            type="email"
-            placeholder="email"
-            id="input_email"
-            name="input_email"
-            required
-          />
-        </p>
-        <p>
-          <label for="contraseña">Ingrese su contraseña </label>
-          <input
-            type="password"
-            placeholder="contraseña"
-            id="input_password"
-            name="password"
-            pattern="(?=.*\d)(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9]).{6,}"
-            required
-          />
-        </p>
-        <!--         
-        <fieldset>
-          <legend>Términos y condiciones</legend>
+      <section class="contenedor-inicio-sesion">
+        <h3>Inicia sesión</h3>
+        <form action="/pizzas" class="form-inicio-sesion">
+          <div class="grupo-input">
+            <label for="email_usuario">Ingrese su email </label>
+            <input
+              type="email"
+              placeholder="email"
+              id="email_usuario"
+              name="input_email"
+              required
+            />
+          </div>
 
-          <input type="checkbox" name="terminos" id="terminos" required />
-          <label for="terminos">Acepto los términos y condiciones </label>
-          <br />
+          <div class="grupo-input">
+            <label for="contraseña">Ingrese su contraseña </label>
+            <input
+              type="password"
+              placeholder="contraseña"
+              id="contraseña"
+              name="password"
+              pattern="(?=.*\d)(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9]).{6,}"
+              required
+            />
+          </div>
 
-          <input type="checkbox" name="privacidad" id="privacidad" required />
-          <label for="privacidad">Acepto la política de privacidad</label>
-          <br />
-
-          <input type="checkbox" name="avisos" id="avisos" checked />
-          <label for="avisos">Deseo recibir avisos y novedades al email</label>
-        </fieldset> -->
-
-        <button type="submit">Ingresar</button>
-      </form>
+          <button type="submit">Ingresar</button>
+        </form>
+        <p>¿Aún no tenés una cuenta? <a href="">Registrarse</a></p>
+      </section>
 
       <br />
     </main>
 
     <footer>
-      <p>🕒 Lunes a Sábados de 08:00 a 20:00 hs.</p>
-      <p>📍 Caseros y La Rioja, Parque Patricios, CABA.</p>
-      <p>Síguenos en Instagram: @cafeteriabluffe</p>
-      <p>&copy; 2026 Cafetería Bluffe - Todos los derechos reservados.</p>
+      <div class="footer-columnas">
+        <div class="columna">
+          <h3>Categorías</h3>
+          <ul>
+            <li><a href="">Cafés</a></li>
+            <li><a href="">Alfajores</a></li>
+            <li><a href="">Bombones</a></li>
+            <li><a href="">Chocolate</a></li>
+          </ul>
+        </div>
+
+        <div class="columna">
+          <ul>
+            <li><a href="">Nuestra Historia</a></li>
+            <li><a href="">Sucursales</a></li>
+            <li><a href="">Trabajá con nosotros</a></li>
+          </ul>
+        </div>
+
+        <div class="columna">
+          <h3>Contacto</h3>
+          <ul>
+            <li>📍 Caseros y La Rioja, CABA</li>
+            <li>🕒 Lun a Sáb - 08:00 a 20:00</li>
+            <li>✉️ hola@bluffe.com</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-creditos">
+        <p>&copy; 2026 Cafetería Bluffe - Todos los derechos reservados.</p>
+      </div>
     </footer>
   </body>
 </html>
