@@ -342,7 +342,7 @@ h2::before {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.6); /* Color negro al 40% de opacidad. Podés subir el 0.4 a 0.6 si querés que sea más oscuro */
+    background-color: rgba(0, 0, 0, 0.4); /* Color negro al 40% de opacidad. Podés subir el 0.4 a 0.6 si querés que sea más oscuro */
     z-index: 1; /* Se pone un piso por encima del video */
 }
 
