@@ -23,11 +23,61 @@ main {
 
 footer {
     margin-top: auto;
-    text-align: center;
-    padding: 20px 10px;
+    /* padding: 20px 10px; */
     background-color: #f2e9e4;
-    border-top: 1px solid black;
+    border-top: 1px solid #adb5bd;
     flex-shrink: 0;
+}
+
+/* La grilla de columnas */
+.footer-columnas {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Esto crea columnas de al menos 200px que se reparten el espacio */
+    gap: 30px;
+    padding: 60px 40px; /* Buen espacio para que respire */
+    max-width: 1200px; /* Para que en pantallas gigantes no se estire al infinito */
+    margin: 0 auto; /* Centra el contenido */
+}
+
+/* Los títulos de cada columna */
+.columna h3 {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    color: #7f5539; /* Un marrón de tu paleta para resaltar */
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+/* Limpiamos el estilo por defecto de las listas */
+.columna ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column; /* Apila los links uno abajo del otro */
+    gap: 12px; /* Espacio entre cada link */
+}
+
+/* Estilo de los links */
+.columna a {
+    text-decoration: none;
+    color: #333533;
+    font-size: 0.95rem;
+    transition: color 0.3s ease;
+}
+
+.columna a:hover {
+    color: #a68a64; /* Color hover de tus botones */
+    text-decoration: underline;
+}
+
+/* La barra de copyright de abajo de todo */
+.footer-creditos {
+    text-align: center;
+    padding: 20px;
+    background-color: #e5d8d0; /* Un tono apenas más oscuro para diferenciar */
+    font-size: 0.85rem;
+    border-top: 1px solid #d3c4bc;
 }
 
 ::selection {
@@ -47,34 +97,54 @@ h1 a {
     color: black;
 }
 
-/*
-nav ul {
-    display: flex;
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-    gap: 30px;
-    padding: 40px 0;
-    justify-content: center;
-    border-bottom: 1px solid #e0e0e0; 
-}
-
-nav a {
-    text-decoration: none;
-    color: #36221c;
+/* 1. La ventana (Solo deja ver de a 35 píxeles) */
+.barra-anuncios {
+    background-color: #2d080a;
+    color: #f8edeb; 
+    height: 35px;
+    overflow: hidden;
+    font-size: 0.85rem;
     font-weight: bold;
-    text-transform: uppercase;
-    font-size: 0.9rem;
+    letter-spacing: 1px;
 }
 
-nav a:hover {
-    color: #997c2b;
+/* 2. La cabina del ascensor */
+.mensajes-verticales {
+    display: flex; 
+    flex-direction: column;
+    animation: deslizarVertical 9s infinite;
 }
 
-nav a:active {
-    color: #7f4f24;
+/* 3. El estilo de cada piso */
+.mensaje {
+    height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
-*/
+
+@keyframes deslizarVertical {
+    /* Piso 1 (Mensaje 1) - Se queda quieto */
+    0%, 25% { 
+        transform: translateY(0); 
+    }
+    
+    /* Viaje rápido al Piso 2 - Se queda quieto */
+    33%, 58% { 
+        transform: translateY(-25%); /* -25% porque la caja tiene 4 mensajes. 1/4 = 25% */
+    }
+    
+    /* Viaje rápido al Piso 3 - Se queda quieto */
+    66%, 91% { 
+        transform: translateY(-50%); 
+    }
+    
+    /* Viaje rápido al Piso 4 (El clon del Mensaje 1) */
+    100% { 
+        transform: translateY(-75%); 
+    }
+}
+
 
 header {
     position: sticky;
@@ -82,7 +152,7 @@ header {
     z-index: 1000;
     background-color: #f8edeb;
     height: 80px;
-    border-bottom: 1px solid black;
+    /* border-bottom: 1px solid #adb5bd; */
 }
 
 nav {
@@ -94,6 +164,7 @@ nav {
     font-size: 1.5rem;
     padding: 20px 40px;
     background-color: #f8edeb;
+    border-bottom: 1px solid #adb5bd;
 }
 
 nav a {
@@ -155,7 +226,7 @@ article {
     background-color: #F2E2CE;
 }
 
-.inicio_sesion input {
+/* .inicio_sesion input {
     padding: 10px;
     border: 2px solid #c9ada7;
     border-radius: 5px;
@@ -171,7 +242,7 @@ article {
 .inicio_sesion input:hover::placeholder {
     /* font-weight: bold; */
     color: rgb(63, 63, 63);
-}
+} */
 
 h2::before {
     content: "☕"; /* Insertamos el ícono desde CSS */
@@ -183,30 +254,6 @@ h2::before {
     width: 800px; 
 }
 
-/*
-#contenedorProductos {
-    margin: auto;
-    width: 80%;
-    min-height: 800px;
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    padding: 20px;
-    gap: 40px;
-}
-
-#contenedorProductos .fotoProducto {
-    width: 300px;
-    height: 300px;
-    object-fit: cover;
-    border: 1px solid transparent;
-}
-
-#contenedorProductos .fotoProducto:hover {
-    border: 1px solid black;
-}
-
-*/
 
 #contenedorMenus {
     margin: auto;
@@ -220,11 +267,19 @@ h2::before {
 }
 
 #contenedorMenus .tarjetaMenu {
+    display: flex; 
+    flex-direction: column;
     width: 300px;
-    height: 300px;
     position: relative; /* Clave: es la referencia para apilar las imágenes */
     overflow: hidden; /* Mantenemos todo limpio */
     cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+
+.fotos {
+    width: 100%;
+    aspect-ratio: 1 / 1; /* Mantiene el cuadrado de las fotos sin importar qué pase */
+    position: relative; /* AHORA ESTA es la referencia para apilar las fotos, no la tarjeta entera */
 }
 
 #contenedorMenus .fotoMenu {
@@ -257,6 +312,13 @@ h2::before {
     opacity: 1;
 }
 
+.pie-de-foto {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 15px;
+}
+
 .banner-video {
     /* width: 100%;
     height: 85vh;
@@ -273,23 +335,71 @@ h2::before {
     object-fit: cover; 
 }
 
-@media (max-width: 768px) {
-    
+/* 2. EL FILTRO OSCURO (Piso 1) */
+.overlay-video {
+    position: absolute; /* Flota sobre el video */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6); /* Color negro al 40% de opacidad. Podés subir el 0.4 a 0.6 si querés que sea más oscuro */
+    z-index: 1; /* Se pone un piso por encima del video */
 }
+
+/* 3. EL TEXTO FLOTANTE (Piso 2) */
+.texto-banner {
+    position: absolute; /* Flota sobre todo */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Este es el truco matemático infalible para centrar exactamente en el medio */
+    z-index: 2; /* Se pone en el piso más alto, arriba del overlay */
+    
+    text-align: center; /* Centramos las letras */
+    width: 80%; /* Le damos un ancho máximo para que en celulares no toque los bordes de la pantalla */
+    color: #f8edeb; /* Usamos tu color clarito de la paleta */
+}
+
+/* 4. ESTILOS ESTÉTICOS DEL TEXTO */
+.texto-banner h1 {
+    font-size: 3.5rem;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Una sombrita extra de seguridad para que se lea perfecto */
+}
+
+.texto-banner p {
+    font-size: 1.3rem;
+    margin-bottom: 30px;
+    font-weight: bold;
+}
+
+/* 5. EL BOTÓN DEL BANNER */
+.btn-banner {
+    background-color: #161101; /* Tu mostaza */
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.btn-banner:hover {
+    background-color: #7f5539; /* Cambia a tu marrón al pasar el mouse */
+}
+
+
+
+
 
 #grid-categorias {
     display: grid;
-    /* Achicamos un poco el tamaño mínimo para que entren más productos por fila (estilo Havanna) */
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); 
-    
-    /* 1. Reducimos el espacio entre ellas */
-    gap: 15px; 
-    
-    /* 2. Le damos el ancho que querés */
-    width: 70%; 
-    
-    /* 3. ¡El truco para centrar! (Margen arriba/abajo: 50px, Izquierda/Derecha: auto) */
-    margin: 50px auto;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Achicamos un poco el tamaño mínimo para que entren más productos por fila (estilo Havanna) */
+    gap: 15px; /* 1. Reducimos el espacio entre ellas */
+    width: 70%; /* 2. Le damos el ancho que querés */
+    margin: 100px auto; /* 3. ¡El truco para centrar! (Margen arriba/abajo: 50px, Izquierda/Derecha: auto) */
+
 }
 
 #grid-categorias p {
@@ -314,5 +424,370 @@ h2::before {
     transform: scale(1.05); /* Efecto zoom al pasar el mouse */
 }
 
+.barra-filtros {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 70%;
+    margin: 40px auto 20px auto;
+    padding-bottom: 15px;
+    border-bottom: 2px solid #e0e0e0;
+}
 
+.texto-filtro {
+    font-weight: bold;
+    color: #333533;
+    margin-right: 5px;
+    font-size: 0.95rem;
+}
+
+.filtro-categorias {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Separación entre botones */
+}
+
+.boton-filtro {
+    background-color: transparent;
+    border: 1px solid #7f5539;
+    color: #7f5539; 
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-weight: bold;
+}
+
+.boton-filtro:hover, 
+.boton-filtro.activo {
+    background-color: #7f5539;
+    color: #f8edeb;
+}
+
+.select-orden {
+    padding: 8px;
+    border: 1px solid #c9ada7;
+    border-radius: 5px; 
+    outline: none;
+    cursor: pointer;
+    background-color: white;
+}
+
+.contenedor-sucursales {
+    width: 80%;
+    margin: 30px auto;
+}
+
+.contenedor-sucursales h2 {
+    color: #7f5539;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.tarjeta-sucursal {
+    display: flex;
+    background-color: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    margin-bottom: 100px;
+}
+
+.sucursal-info {
+    display: flex;
+    flex: 1.5;
+    flex-direction: column;
+}
+
+.sucursal-info img {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+}
+
+.sucursal-texto {
+    padding: 30px;
+    color: #333533;
+}
+
+.sucursal-texto h3 {
+    margin-top: 0;
+    color: #a68a64;
+}
+
+.sucursal-mapa {
+    flex: 1;
+    min-height: 300px;
+}
+
+.contenedor-contacto {
+    display: flex;
+    width: 80%;
+    max-width: 1000px;
+    margin: 60px auto;
+    background-color: white;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    overflow: hidden;
+}
+
+/* LADO IZQUIERDO DEL FORMULARIO */
+.info-contacto {
+    flex: 1;
+    background-color: #e6dedb;
+    padding: 50px;
+    color: #333533;
+}
+
+.info-contacto h2 {
+    margin-top: 0;
+    color: #7f5539;
+}
+
+.datos-lista {
+    list-style: none;
+    padding: 0;
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+/* LADO DERECHO DEL FORMULARIO */
+.formulario-contacto {
+    flex: 1.5;
+    padding: 30px;
+}
+
+.formulario-contacto form,
+.form-bluffe {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.grupo-input {
+    display: flex; 
+    flex-direction: column;
+    gap: 5px;
+}
+
+.grupo-input label {
+    font-weight: bold;
+    font-size: 0.9rem;
+    color: #333533;
+}
+
+.grupo-input input, 
+.grupo-input textarea {
+    padding: 12px;
+    border: 1px solid #c9ada7;
+    border-radius: 10px;
+    font-family: inherit;
+    outline: none;
+    transition: all 0.3s;
+}
+
+.grupo-input input:focus,
+.grupo-input textarea:focus {
+    border-color: #997c2b; /* Tu color mostaza */
+    box-shadow: 0 0 0 2px rgba(153, 124, 43, 0.2); /* Un halo suave del mismo color */
+}
+
+.boton-enviar-formulario {
+    padding: 15px;
+    margin-top: 10px;
+}
+
+.contenedor-inicio-sesion h3 {
+    text-align: center;
+}
+
+.contenedor-inicio-sesion {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: white;
+    width: 40%;
+    margin: 30px auto;
+    padding: 30px;
+    border-radius: 10px;
+    gap: 15px;
+    max-width: 1000px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+
+.form-inicio-sesion {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+}
+
+.contenedor-inicio-sesion a {
+    text-decoration: underline;
+    color: black;
+    font-size: 0.95rem;
+    transition: color 0.3s ease;
+}
+
+.contenedor-inicio-sesion a:hover {
+    color: #432818; /* Color hover de tus botones */
+    text-decoration: underline;
+}
+
+/* 1. Contenedor general del producto ejemplo */
+.pagina-producto {
+    width: 80%;
+    max-width: 1200px;
+    margin: 50px auto;
+    font-family: inherit;
+    color: #333533;
+}
+
+/* 2. Division a dos columnas */
+.contenedor-producto-principal {
+    display: flex;
+    gap: 50px;
+    margin-bottom: 60px;
+}
+
+.columna-imagen {
+    flex: 1;
+}
+
+.columna-imagen img {
+    width: 100%;
+    border-radius: 10px;
+    object-fit: cover;
+    aspect-ratio: 1 / 1;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+
+.columna-info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* 3. Estilos de Título y Precio */
+.columna-info h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    color: #333533;
+}
+
+.columna-info #precio {
+    font-size: 2rem;
+    color: black;
+    font-weight: bold;
+    margin-top: 0;
+    margin-bottom: 30px;
+}
+
+/* 4. La cajita de cantidad y botón */
+.caja-compra {
+    display: flex; 
+    flex-direction: column;
+    gap: 20px;
+    background-color: #f2e9e4;
+    padding: 25px;
+    border-radius: 10px;
+}
+
+.grupo-cantidad label {
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+.grupo-cantidad select {
+    padding: 10px;
+    border: 1px solid #c9ada7;
+    border-radius: 5px;
+    outline: none;
+    font-family: inherit;
+    cursor: pointer;
+}
+
+.tabla-tecnica {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.tabla-tecnica caption {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #7f5539;
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+.tabla-tecnica th, 
+.tabla-tecnica td {
+    padding: 15px;
+    border-bottom: 1px solid #c9ada7;
+    text-align: left;
+}
+
+.tabla-tecnica thead th {
+    background-color: #f2e9e4;
+    color: #333533;
+}
+
+.tabla-tecnica tbody th {
+    color: #7f5539;
+    width: 30%; /* La columna de características es más angosta que la de detalles */
+}
+
+.descripcion-corta {
+    font-size: 1.1rem;
+    line-height: 1.6; /* El superpoder para que los párrafos largos sean fáciles de leer */
+    color: #555555; /* Un gris un poco más apagado para que no compita visualmente con el título negro */
+    margin-bottom: 30px; /* Empuja la cajita de compra hacia abajo para no quedar pegados */
+}
+
+/* El contenedor principal de la descripción */
+.contenedor-descripcion-larga {
+    margin-top: 50px;
+    padding: 40px;
+    background-color: white; 
+    border: 1px solid #e0e0e0; /* Un borde gris muy suave para enmarcar */
+    border-radius: 10px;
+    color: #333533;
+}
+
+/* El título principal "Descripción" */
+.contenedor-descripcion-larga h2 {
+    font-size: 1.5rem;
+    margin-top: 0;
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #e0e0e0; /* Línea separadora como usa Mercado Libre */
+}
+
+/* El texto introductorio */
+.intro-descripcion {
+    line-height: 1.6;
+    margin-bottom: 30px;
+    font-size: 1.05rem;
+}
+
+/* El contenedor de cada tipo de alfajor/producto */
+.item-descripcion {
+    margin-bottom: 25px; /* Separación entre un alfajor y otro */
+}
+
+/* El subtítulo con el emoji */
+.item-descripcion h3 {
+    font-size: 1.1rem;
+    color: #7f5539; /* Usamos tu color principal para que resalte */
+    margin: 0 0 8px 0; /* Un poquito de margen solo abajo para empujar el texto */
+}
+
+/* El texto explicativo de cada ítem */
+.item-descripcion p {
+    margin: 0;
+    line-height: 1.5;
+    color: #555555; /* Un gris un poco más claro para diferenciarlo del título */
+    padding-left: 28px; /* TRUCO: Empuja el texto hacia la derecha para que quede alineado con las letras del título y no con el emoji */
+}
 
