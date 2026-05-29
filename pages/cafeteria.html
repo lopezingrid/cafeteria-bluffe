@@ -17,13 +17,25 @@ cosa1 > cosa2, cosa1 + cosa2, cosa1 * cosa2, $, -->
     />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   </head>
+
   <body>
     <header>
-      <!-- <h1><a href="cafeteria.html">Cafeteria Bluffe</a></h1> -->
+      <div class="barra-anuncios">
+        <div class="mensajes-verticales">
+          <div class="mensaje">
+            🛵 ¡Envíos gratis en Parque Patricios y toda CABA!
+          </div>
+          <div class="mensaje">☕ 10% de descuento abonando en efectivo</div>
+          <div class="mensaje">🥐 Probá nuestras nuevas medialunas</div>
+          <div class="mensaje">
+            🛵 ¡Envíos gratis en Parque Patricios y toda CABA!
+          </div>
+        </div>
+      </div>
+
       <nav>
         <a href="cafeteria.html">Cafeteria Bluffe</a>
         <ul>
-          <li><a href="menu.html">Menu</a></li>
           <li><a href="productos.html">Productos</a></li>
           <li><a href="sucursales.html">Sucursales</a></li>
           <li><a href="contacto.html">Contacto</a></li>
@@ -33,42 +45,40 @@ cosa1 > cosa2, cosa1 + cosa2, cosa1 * cosa2, $, -->
     </header>
 
     <main>
-      <!-- <form action="/search/"></form>
-      <section class="banner_inicio">
-        <img
-          src="../assets/images/banner_cafes_calientes.png"
-          alt="Nuestros nuevos cafés"
-          width="500px"
-        />
-        <figcaption>Nuestros nuevos cafés...</figcaption>
-      </section> -->
-
       <div class="banner-video">
         <video autoplay muted loop playsinline>
           <source src="../assets/videos/video-bluffe.mp4" type="video/mp4" />
           Tu navegador no soporta videos.
         </video>
+
+        <div class="overlay-video"></div>
+
+        <div class="texto-banner">
+          <h1>Cafetería Bluffe</h1>
+          <p>El mejor café de especialidad y horneado artesanal</p>
+          <button class="btn-banner">Ver Menú</button>
+        </div>
       </div>
 
       <div id="grid-categorias">
-        <a href="menu.html#cafe" class="item-categoria">
+        <a href="productos.html#cafe" class="item-categoria">
           <img src="../assets/images/categoria-paquete-cafe.png" alt="Café" />
-          <p>Café</p>
+          <p>Cafés</p>
         </a>
 
-        <a href="menu.html#alfajores" class="item-categoria">
+        <a href="productos.html#alfajores" class="item-categoria">
           <img src="../assets/images/categoria-alfajor.png" alt="Alfajores" />
           <p>Alfajores</p>
         </a>
 
-        <a href="menu.html#bombones" class="item-categoria">
+        <a href="productos.html#bombones" class="item-categoria">
           <img src="../assets/images/categoria-bombon.png" alt="Bombones" />
           <p>Bombones</p>
-          
-        <a href="menu.html#bombones" class="item-categoria">
-          <img src="../assets/images/categoria-chocolate.png" alt="Bombones" />
-          <p>Chocolate</p>
+        </a>
 
+        <a href="productos.html#bombones" class="item-categoria">
+          <img src="../assets/images/categoria-chocolate.png" alt="Bombones" />
+          <p>Chocolates</p>
         </a>
       </div>
 
@@ -80,10 +90,39 @@ cosa1 > cosa2, cosa1 + cosa2, cosa1 * cosa2, $, -->
     </main>
 
     <footer>
-      <p>🕒 Lunes a Sábados de 08:00 a 20:00 hs.</p>
-      <p>📍 Caseros y La Rioja, Parque Patricios, CABA.</p>
-      <p>Síguenos en Instagram: @cafeteriabluffe</p>
-      <p>&copy; 2026 Cafetería Bluffe - Todos los derechos reservados.</p>
+      <div class="footer-columnas">
+        <div class="columna">
+          <h3>Categorías</h3>
+          <ul>
+            <li><a href="">Cafés</a></li>
+            <li><a href="">Alfajores</a></li>
+            <li><a href="">Bombones</a></li>
+            <li><a href="">Chocolates</a></li>
+          </ul>
+        </div>
+
+        <div class="columna">
+          <h3>Sobre Nosotros</h3>
+          <ul>
+            <li><a href="">Nuestra Historia</a></li>
+            <li><a href="">Sucursales</a></li>
+            <li><a href="">Trabajá con nosotros</a></li>
+          </ul>
+        </div>
+
+        <div class="columna">
+          <h3>Contactanos</h3>
+          <ul>
+            <li>📍 Av Caseros y La Rioja, CABA</li>
+            <li>🕒 Lun a Sáb - 08:00 a 20:00</li>
+            <li>✉️ hola@bluffe.com</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-creditos">
+        <p>&copy; 2026 Cafetería Bluffe - Todos los derechos reservados.</p>
+      </div>
     </footer>
   </body>
 </html>
