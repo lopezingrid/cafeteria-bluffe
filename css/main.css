@@ -58,8 +58,17 @@ footer {
     gap: 12px; /* Espacio entre cada link */
 }
 
+.columna li {
+    /* display: block; */
+    width: 100%;
+}
+
 /* Estilo de los links */
 .columna a {
+    display: block;
+    width: 100%;
+    padding: 5px 0;
+
     text-decoration: none;
     color: #333533;
     font-size: 0.95rem;
@@ -89,7 +98,6 @@ h1 {
     font-weight: normal;
     line-height: 1;
     letter-spacing: 1px;
-    background-color: ;
 }
 
 h1 a {
@@ -155,7 +163,7 @@ header {
     /* border-bottom: 1px solid #adb5bd; */
 }
 
-nav {
+header nav {
     width: 100%;
     display: flex;
     box-sizing: border-box;
@@ -167,23 +175,23 @@ nav {
     border-bottom: 1px solid #adb5bd;
 }
 
-nav a {
+header nav a {
     text-decoration: none;
     color: #333533;
 }
 
-nav a:hover {
+header nav a:hover {
     color: #846267;
     /* text-decoration: underline; */
 }
 
-ul, li {
+header ul, li {
     display: inline;
     margin: 0;
     padding: 0;
 }
 
-ul {
+header ul {
     display: flex; 
     flex: 1; 
     max-width: 50%;
@@ -240,7 +248,7 @@ article {
 }
 
 .inicio_sesion input:hover::placeholder {
-    /* font-weight: bold; */
+    font-weight: bold; 
     color: rgb(63, 63, 63);
 } */
 
@@ -257,7 +265,6 @@ h2::before {
 
 #contenedorMenus {
     margin: auto;
-    width: 80%;
     min-height: 800px;
     display: flex;
     justify-content: center;
@@ -374,7 +381,7 @@ h2::before {
 
 /* 5. EL BOTÓN DEL BANNER */
 .btn-banner {
-    background-color: #161101; /* Tu mostaza */
+    background-color: #2d080a; 
     color: white;
     border: none;
     padding: 15px 30px;
@@ -386,20 +393,18 @@ h2::before {
 }
 
 .btn-banner:hover {
-    background-color: #7f5539; /* Cambia a tu marrón al pasar el mouse */
+    background-color: #442d1e; /* Cambia a tu marrón al pasar el mouse */
+    color: white;
+    box-shadow: 0 0.5em 0.5em -0.4em #4a3120;
 }
-
-
-
 
 
 #grid-categorias {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Achicamos un poco el tamaño mínimo para que entren más productos por fila (estilo Havanna) */
-    gap: 15px; /* 1. Reducimos el espacio entre ellas */
-    width: 70%; /* 2. Le damos el ancho que querés */
-    margin: 100px auto; /* 3. ¡El truco para centrar! (Margen arriba/abajo: 50px, Izquierda/Derecha: auto) */
-
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); 
+    gap: 15px;
+    /* width: 70%;  tacho ya que lo hace boostrap */
+    margin: 100px auto; 
 }
 
 #grid-categorias p {
@@ -428,7 +433,6 @@ h2::before {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 70%;
     margin: 40px auto 20px auto;
     padding-bottom: 15px;
     border-bottom: 2px solid #e0e0e0;
@@ -472,7 +476,6 @@ h2::before {
 }
 
 .contenedor-sucursales {
-    width: 80%;
     margin: 30px auto;
 }
 
@@ -520,8 +523,6 @@ h2::before {
 
 .contenedor-contacto {
     display: flex;
-    width: 80%;
-    max-width: 1000px;
     margin: 60px auto;
     background-color: white;
     border-radius: 15px;
@@ -606,12 +607,10 @@ h2::before {
     flex-direction: column;
     justify-content: center;
     background-color: white;
-    width: 40%;
     margin: 30px auto;
     padding: 30px;
     border-radius: 10px;
     gap: 15px;
-    max-width: 1000px;
     box-shadow: 0 5px 15px rgba(0,0,0,0.05);
 }
 
@@ -636,8 +635,8 @@ h2::before {
 
 /* 1. Contenedor general del producto ejemplo */
 .pagina-producto {
-    width: 80%;
-    max-width: 1200px;
+    /* width: 80%;
+    max-width: 1200px; */
     margin: 50px auto;
     font-family: inherit;
     color: #333533;
@@ -790,4 +789,59 @@ h2::before {
     color: #555555; /* Un gris un poco más claro para diferenciarlo del título */
     padding-left: 28px; /* TRUCO: Empuja el texto hacia la derecha para que quede alineado con las letras del título y no con el emoji */
 }
+
+
+/* DISEÑO RESPONSIVE */
+/* 1. Tablets y pantallas medianas */
+@media (max-width: 1024px) {
+    .tarjetaMenu {
+        width: 230px; 
+    }
+
+    .contenedor-contacto {
+        flex-direction: column;
+    }
+}
+
+/* 2. Celulares */
+@media (max-width: 768px) {
+    header {
+        height: auto;
+    }
+
+    /* nav {
+        flex-direction: column;
+        justify-content: flex-start;
+        padding: 15px;
+        gap: 15px;
+    }
+
+    ul {
+        flex-direction: column;
+        flex-wrap: wrap;
+    } */
+
+    nav {
+        flex-direction: column;
+        padding: 15px;
+        gap: 15px;
+        /* El align-items: center ya viene heredado de tu base */
+    }
+
+    ul {
+        flex-wrap: wrap; 
+        justify-content: center; /* Vuelve a centrar los links SOLO en el celular */ 
+    }
+
+    
+}
+
+
+
+
+
+
+
+
+
 
