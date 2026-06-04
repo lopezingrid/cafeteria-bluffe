@@ -31,12 +31,7 @@ footer {
 
 /* La grilla de columnas */
 .footer-columnas {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Esto crea columnas de al menos 200px que se reparten el espacio */
-    gap: 30px;
-    padding: 60px 40px; /* Buen espacio para que respire */
-    max-width: 1200px; /* Para que en pantallas gigantes no se estire al infinito */
-    margin: 0 auto; /* Centra el contenido */
+    margin: 50px auto; 
 }
 
 /* Los títulos de cada columna */
@@ -234,24 +229,6 @@ article {
     background-color: #F2E2CE;
 }
 
-/* .inicio_sesion input {
-    padding: 10px;
-    border: 2px solid #c9ada7;
-    border-radius: 5px;
-    outline: none; 
-    transition: border-width 0.2s, border-color 0.2s;
-}
-
-.inicio_sesion input:focus {
-    box-shadow: 0 0 0 1px #997c2b;
-    border-color: #997c2b; 
-}
-
-.inicio_sesion input:hover::placeholder {
-    font-weight: bold; 
-    color: rgb(63, 63, 63);
-} */
-
 h2::before {
     content: "☕"; /* Insertamos el ícono desde CSS */
     margin-right: 10px;
@@ -263,20 +240,15 @@ h2::before {
 }
 
 
-#contenedorMenus {
+#contenedor-menus {
     margin: auto;
     min-height: 800px;
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
     padding: 20px;
-    gap: 40px;
 }
 
-#contenedorMenus .tarjetaMenu {
+#contenedor-menus .tarjeta-menu {
     display: flex; 
     flex-direction: column;
-    width: 300px;
     position: relative; /* Clave: es la referencia para apilar las imágenes */
     overflow: hidden; /* Mantenemos todo limpio */
     cursor: pointer;
@@ -289,8 +261,8 @@ h2::before {
     position: relative; /* AHORA ESTA es la referencia para apilar las fotos, no la tarjeta entera */
 }
 
-#contenedorMenus .fotoMenu {
-    width: 100%; /* Ocupa todo el contenedor .tarjetaMenu (300px) */
+#contenedor-menus .fotoMenu {
+    width: 100%; /* Ocupa todo el contenedor .tarjeta-menu (300px) */
     height: 100%;
     object-fit: cover;
     position: absolute; /* Clave: apila las imágenes una sobre otra */
@@ -398,12 +370,12 @@ h2::before {
     box-shadow: 0 0.5em 0.5em -0.4em #4a3120;
 }
 
+.btn-banner a {
+    color: white;
+    text-decoration: none;
+}
 
 #grid-categorias {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); 
-    gap: 15px;
-    /* width: 70%;  tacho ya que lo hace boostrap */
     margin: 100px auto; 
 }
 
@@ -427,6 +399,7 @@ h2::before {
 
 .item-categoria:hover {
     transform: scale(1.05); /* Efecto zoom al pasar el mouse */
+    color: #bc6c25;
 }
 
 .barra-filtros {
@@ -436,6 +409,8 @@ h2::before {
     margin: 40px auto 20px auto;
     padding-bottom: 15px;
     border-bottom: 2px solid #e0e0e0;
+    flex-wrap: wrap;
+    gap: 20px;
 }
 
 .texto-filtro {
@@ -449,6 +424,7 @@ h2::before {
     display: flex;
     align-items: center;
     gap: 10px; /* Separación entre botones */
+    flex-wrap: wrap;
 }
 
 .boton-filtro {
@@ -486,7 +462,6 @@ h2::before {
 }
 
 .tarjeta-sucursal {
-    display: flex;
     background-color: white;
     border-radius: 15px;
     overflow: hidden;
@@ -494,11 +469,11 @@ h2::before {
     margin-bottom: 100px;
 }
 
-.sucursal-info {
+/* .sucursal-info {
     display: flex;
     flex: 1.5;
     flex-direction: column;
-}
+} */
 
 .sucursal-info img {
     width: 100%;
@@ -516,13 +491,11 @@ h2::before {
     color: #a68a64;
 }
 
-.sucursal-mapa {
-    flex: 1;
+.sucursal-mapa iframe {
     min-height: 300px;
 }
 
 .contenedor-contacto {
-    display: flex;
     margin: 60px auto;
     background-color: white;
     border-radius: 15px;
@@ -532,7 +505,6 @@ h2::before {
 
 /* LADO IZQUIERDO DEL FORMULARIO */
 .info-contacto {
-    flex: 1;
     background-color: #e6dedb;
     padding: 50px;
     color: #333533;
@@ -554,7 +526,6 @@ h2::before {
 
 /* LADO DERECHO DEL FORMULARIO */
 .formulario-contacto {
-    flex: 1.5;
     padding: 30px;
 }
 
@@ -603,14 +574,9 @@ h2::before {
 }
 
 .contenedor-inicio-sesion {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
     background-color: white;
-    margin: 30px auto;
     padding: 30px;
     border-radius: 10px;
-    gap: 15px;
     box-shadow: 0 5px 15px rgba(0,0,0,0.05);
 }
 
@@ -644,13 +610,13 @@ h2::before {
 
 /* 2. Division a dos columnas */
 .contenedor-producto-principal {
-    display: flex;
-    gap: 50px;
+    /* display: flex; 
+    gap: 50px; */ 
     margin-bottom: 60px;
 }
 
 .columna-imagen {
-    flex: 1;
+    /* flex: 1; */
 }
 
 .columna-imagen img {
@@ -794,13 +760,10 @@ h2::before {
 /* DISEÑO RESPONSIVE */
 /* 1. Tablets y pantallas medianas */
 @media (max-width: 1024px) {
-    .tarjetaMenu {
+    .tarjeta-menu {
         width: 230px; 
     }
 
-    .contenedor-contacto {
-        flex-direction: column;
-    }
 }
 
 /* 2. Celulares */
