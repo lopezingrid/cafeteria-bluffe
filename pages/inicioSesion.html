@@ -40,68 +40,77 @@
     </header>
 
     <main>
-      <section class="contenedor-inicio-sesion container">
-        <h3>Inicia sesión</h3>
-        <form action="/pizzas" class="form-inicio-sesion">
-          <div class="grupo-input">
-            <label for="email_usuario">Ingrese su email </label>
-            <input
-              type="email"
-              placeholder="email"
-              id="email_usuario"
-              name="input_email"
-              required
-            />
-          </div>
+      <section class="container">
+        <div class="row justify-content-center">
+          <div class="col-12 col-md-8 col-lg-7">
+            <div class="contenedor-inicio-sesion">
+              <h3>Inicia sesión</h3>
+              <form action="/pizzas" class="form-inicio-sesion">
+                <div class="grupo-input">
+                  <label for="email_usuario">Ingrese su email </label>
+                  <input
+                    type="email"
+                    placeholder="email"
+                    id="email_usuario"
+                    name="input_email"
+                    required
+                  />
+                </div>
 
-          <div class="grupo-input">
-            <label for="contraseña">Ingrese su contraseña </label>
-            <input
-              type="password"
-              placeholder="contraseña"
-              id="contraseña"
-              name="password"
-              pattern="(?=.*\d)(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9]).{6,}"
-              required
-            />
-          </div>
+                <div class="grupo-input">
+                  <label for="contraseña">Ingrese su contraseña </label>
+                  <input
+                    type="password"
+                    placeholder="contraseña"
+                    id="contraseña"
+                    name="password"
+                    pattern="(?=.*\d)(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9]).{6,}"
+                    required
+                  />
+                </div>
 
-          <button type="submit">Ingresar</button>
-        </form>
-        <p>¿Aún no tenés una cuenta? <a href="">Registrarse</a></p>
+                <button type="submit">Ingresar</button>
+              </form>
+              <p>¿Aún no tenés una cuenta? <a href="">Registrarse</a></p>
+            </div>
+          </div>
+        </div>
       </section>
 
       <br />
     </main>
 
     <footer>
-      <div class="footer-columnas container">
-        <div class="columna">
-          <h3>Categorías</h3>
-          <ul>
-            <li><a href="">Cafés</a></li>
-            <li><a href="">Alfajores</a></li>
-            <li><a href="">Bombones</a></li>
-            <li><a href="">Chocolate</a></li>
-          </ul>
-        </div>
+      <div class="container footer-columnas">
+        <div class="row">
+          <div class="col-12 col-md-4 col-sm-6 columna mb-4">
+            <h3>Categorías</h3>
+            <ul>
+              <li><a href="">Cafés</a></li>
+              <li><a href="">Alfajores</a></li>
+              <li><a href="">Bombones</a></li>
+              <li><a href="">Chocolates</a></li>
+            </ul>
+          </div>
 
-        <div class="columna">
-          <h3>Sobre Nosotros</h3>
-          <ul>
-            <li><a href="">Nuestra Historia</a></li>
-            <li><a href="">Sucursales</a></li>
-            <li><a href="">Trabajá con nosotros</a></li>
-          </ul>
-        </div>
+          <div class="col-12 col-md-4 col-sm-6 columna mb-4">
+            <h3>Sobre Nosotros</h3>
+            <ul>
+              <li><a href="">Nuestra Historia</a></li>
+              <li><a href="">Sucursales</a></li>
+              <li><a href="">Trabajá con nosotros</a></li>
+            </ul>
+          </div>
 
-        <div class="columna">
-          <h3>Contacto</h3>
-          <ul>
-            <li>📍 Caseros y La Rioja, CABA</li>
-            <li>🕒 Lun a Sáb - 08:00 a 20:00</li>
-            <li>✉️ hola@bluffe.com</li>
-          </ul>
+          <div class="col-12 col-md-4 col-sm-6 columna mb-4">
+            <h3>Contactanos</h3>
+            <ul>
+              <li>📍 Av Caseros y La Rioja, CABA</li>
+              <li>📍 Av. Santa Fe 4100, CABA</li>
+              <li>🕒 Lun a Sáb - 08:00 a 20:00</li>
+              <li>✉️ hola@bluffe.com</li>
+            </ul>
+          </div>
         </div>
       </div>
 
